@@ -1,0 +1,14 @@
+# Secrets — the restic repo password and env live here, NEVER commit them
+scripts/restic.env
+*.env
+!*.env.example
+*.password
+*.key
+
+# Restore scratch / logs
+restore-test/
+*.log
+
+# Editor / OS
+.vscode/
+*~

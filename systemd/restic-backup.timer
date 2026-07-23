@@ -1,0 +1,15 @@
+# restic-backup.timer — run the backup daily, with catch-up if the machine was off.
+# Install: copy to /etc/systemd/system/, then:
+#   systemctl daemon-reload && systemctl enable --now restic-backup.timer
+[Unit]
+Description=Daily restic homelab backup
+
+[Timer]
+# Every day at 02:30, with a random delay so it isn't exactly on the hour.
+OnCalendar=*-*-* 02:30:00
+RandomizedDelaySec=15min
+# If the machine was off at 02:30, run as soon as it's next up.
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,20 @@
+# restic-backup.service — one-shot backup run, invoked by restic-backup.timer.
+# Install: copy to /etc/systemd/system/, then `systemctl daemon-reload`.
+[Unit]
+Description=Restic homelab backup
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+# Adjust the path to wherever you cloned this repo.
+ExecStart=/home/eddie/backup-dr-lab/scripts/backup.sh
+# Don't hammer the disk/CPU; backups are not urgent.
+Nice=10
+IOSchedulingClass=idle
+# Send failures to the journal loudly.
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
