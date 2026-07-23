@@ -58,5 +58,8 @@ restic forget --tag "$TAG" \
 log "Retention applied."
 
 # Cheap consistency check every run; a full --read-data check belongs on a slower schedule.
+restic check || log "WARNING: restic check reported repository errors"
+
+# Show the most recent snapshots so the run log ends with proof the new backup exists.
 restic snapshots --tag "$TAG" --compact | tail -n 5
 log "Backup run complete."

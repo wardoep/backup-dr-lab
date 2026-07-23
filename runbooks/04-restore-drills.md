@@ -14,7 +14,7 @@
 2. **Restore a whole directory to an alternate path** (never restore over the live copy during a drill):
    ```bash
    set -a; . restic.env; set +a
-   restic restore latest --path /srv --target /tmp/restore-srv
+   restic restore latest --include /srv --target /tmp/restore-srv
    diff -rq /srv /tmp/restore-srv/srv | head
    ```
 
