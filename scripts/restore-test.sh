@@ -41,7 +41,9 @@ trap cleanup EXIT
 
 echo "Restoring latest snapshot of '$TARGET_PATH' into $RESTORE_DIR ..."
 # 'latest' + --path restricts to snapshots containing that path; --include limits what's extracted.
-restic restore latest --path "$TARGET_PATH" --include "$TARGET_PATH" --target "$RESTORE_DIR"
+# --include selects just this path out of the latest snapshot. (Don't use --path here:
+# --path filters snapshots by their top-level backup target, not by an individual file.)
+restic restore latest --include "$TARGET_PATH" --target "$RESTORE_DIR"
 
 restored_copy="$RESTORE_DIR$TARGET_PATH"
 if [[ ! -e "$restored_copy" ]]; then
