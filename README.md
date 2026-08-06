@@ -27,16 +27,16 @@ The runbooks are the *how*; **[TAKEAWAYS.md](TAKEAWAYS.md) is the *why*** — wh
 
 ## Milestones
 
-| # | Runbook | Status |
-|---|---------|--------|
-| 0 | [The 3-2-1 strategy and threat model](runbooks/00-strategy-3-2-1.md) | ☐ |
-| 1 | [Install restic, init local + offsite repos](runbooks/01-install-init-repos.md) | ☐ |
-| 2 | [Backup script + systemd timer](runbooks/02-backup-script-and-timer.md) | ☐ |
-| 3 | [Retention and pruning](runbooks/03-retention-and-pruning.md) | ☐ |
-| 4 | [Restore drills](runbooks/04-restore-drills.md) | ☐ |
-| 5 | [Disaster-recovery runbook](runbooks/05-dr-runbook.md) | ☐ |
+| # | Runbook |
+|---|---------|
+| 0 | [The 3-2-1 strategy and threat model](runbooks/00-strategy-3-2-1.md) |
+| 1 | [Install restic, init local + offsite repos](runbooks/01-install-init-repos.md) |
+| 2 | [Backup script + systemd timer](runbooks/02-backup-script-and-timer.md) |
+| 3 | [Retention and pruning](runbooks/03-retention-and-pruning.md) |
+| 4 | [Restore drills](runbooks/04-restore-drills.md) |
+| 5 | [Disaster-recovery runbook](runbooks/05-dr-runbook.md) |
 
-Statuses get checked off as each part is built and verified. Restore drills get logged in [`DRILLS.md`](DRILLS.md) as I run them.
+Restore drills get logged in [`DRILLS.md`](DRILLS.md) as I run them.
 
 ## What's in this repo
 
